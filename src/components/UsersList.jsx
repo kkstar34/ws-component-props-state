@@ -3,6 +3,10 @@ import { Component } from "react";
 
 export class UsersList extends Component {
 
+    state = {
+        name : "Kouassi Blaise",
+        age : 2
+    };
 
 
     componentDidMount() {
@@ -18,6 +22,13 @@ export class UsersList extends Component {
 
     componentWillMount() {
 
+    }
+
+    handleChangeName = () => {
+
+        let newState = this.state; // faire une copie de l'etat
+        newState.name = "Yvan Cesar";
+        this.setState(newState);
     }
 
 
@@ -36,6 +47,14 @@ export class UsersList extends Component {
 
                     
                 </ul>
+
+                <div>
+                    <h3>Presentation du state</h3>
+                    <p>{this.state.name}</p>
+                    <p>{this.state.age}</p>
+
+                    <button onClick={this.handleChangeName}>Change Name</button>
+                </div>
             </div>
     );
 

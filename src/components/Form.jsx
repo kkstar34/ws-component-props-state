@@ -1,8 +1,13 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 
 export const Form =  ({users, submit, children})  => {
 
     
+
+    const [user, setUser] = useState({
+        name : "Kouassi Blaise",
+        age : 2
+    })
 
 
 
@@ -22,7 +27,7 @@ export const Form =  ({users, submit, children})  => {
    }, [])
 
 
-   
+
   return (
     <div className="form">
         <form action="">
@@ -41,6 +46,13 @@ export const Form =  ({users, submit, children})  => {
                     }
                 </ul>
           </form>
+
+
+          <div>
+            <h3>Presentation du state</h3>
+            <p>{user.name}</p>
+            <p>{user.age}</p>
+        </div>
     </div>
   )
 }
